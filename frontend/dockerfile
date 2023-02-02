@@ -1,0 +1,20 @@
+# Use an official Node.js runtime as the base image
+FROM node:15
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install required packages
+RUN npm install
+
+# Set environment variables
+ENV NODE_ENV=development
+
+# Expose port 3000 for the React development server
+EXPOSE 3000
+
+# Run the command to start the React development server
+CMD ["npm", "start"]
