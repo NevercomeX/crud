@@ -76,9 +76,7 @@ SessionToken: {token}
         },{...} // todos los comentarios
         },
         {...} // todos los dibujos
-    }
-    ]
-
+    }],
 }
 401: Token inválido
 404: Juego no encontrado
