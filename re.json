@@ -1,0 +1,84 @@
+POST /v1/game/{cod}
+SessionToken: {token}
+200 OK - Response Body:
+{
+    "code":"XJW",
+    "players":["Cristina","Omar","M Cristina"],
+    "created":"2018-01-01T00:00:00.000Z",
+}
+401: Token inválido
+404: Juego no encontrado
+
+Login
+
+
+Registro de usuario:
+
+POST /v1/usuario
+Response Body:
+{
+    "Name":"john",
+    "email": "john@example",
+    "passoword":"password",
+}
+201: Usuario creado
+400: bad request
+409: Usuario ya existe
+
+POST /v1/game/{cod}
+SessionToken: {token}
+200 OK - Response Body:
+{
+    "code":"XJW",
+    "players":["Cristina","Omar","M Cristina"],
+    "created":"2018-01-01T00:00:00.000Z",
+}
+401: Token inválido
+404: Juego no encontrado
+
+Obtener dibujo de un jugador para verlo y permitir votar
+la app cliente deberia cada N segundos pedir el dibujo de uno de los
+jugadores de la sala
+
+GET game/{cod}/player/{name}/drawing
+
+200 OK - Response Body:
+{
+    "path":"/drawings/pepe000002.png"
+}
+401: Token inválido
+404: Juego no encontrado
+
+Permite compartir el dibujo
+POST game/{cod}/share
+SessionToken: {token}
+200 OK - Response Body:
+{
+    "path":"/drawings/pepe000002.png",
+    "UploadAt":"2018-01-01T00:00:00.000Z",
+}
+401: Token inválido
+404: Juego no encontrado
+
+
+Ver el perfil de la persona
+GET /v1/user/{name}
+SessionToken: {token}
+200 OK - Response Body:
+{
+    "drawings":[
+        {
+            "path":"/drawings/pepe000002.png",
+            "UploadAt":"2018-01-01T00:00:00.000Z",
+     "comments":{
+            "user":"Cristina",
+            "comment":"comentario",
+        },{...} // todos los comentarios
+        },
+        {...} // todos los dibujos
+    }
+    ]
+
+}
+401: Token inválido
+404: Juego no encontrado
