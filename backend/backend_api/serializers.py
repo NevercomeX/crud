@@ -12,13 +12,6 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 
-
-
-class MovieSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Movie
-        fields = '__all__'
-
 class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario

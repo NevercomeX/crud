@@ -19,10 +19,6 @@ from django.utils import timezone
 
 
 # Create your views here.
-class MovieViewSet(viewsets.ModelViewSet):
-    serializer_class = MovieSerializer
-    queryset = Movie.objects.all()
-
 class UsuarioViewSet(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
@@ -115,6 +111,8 @@ class GetDrawingView(generics.RetrieveAPIView):
         return Response({
             'path': drawing.path
         })
+
+        # //TODO    
 
 class ShareDrawingView(generics.CreateAPIView):
     queryset = Dibujo.objects.all()

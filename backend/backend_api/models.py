@@ -1,11 +1,6 @@
 from django.db import models
 
 # Create your models here.
-class Movie(models.Model):
-    name = models.CharField(max_length=250)
-    genre = models.CharField(max_length=200)
-    starring = models.CharField(max_length=350)
-
 class Usuario(models.Model):
     token = models.CharField(max_length=256, primary_key=True)
     nombre = models.CharField(max_length=20)

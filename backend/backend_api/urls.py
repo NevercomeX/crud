@@ -15,7 +15,6 @@ router.register(r'participaciones', ParticipaViewSet)
 router.register(r'dibujos', DibujoViewSet)
 router.register(r'comentarios', ComentarioViewSet)
 router.register(r'valoraciones', ValoraViewSet)
-router.register(r'movies', views.MovieViewSet)
 
 urlpatterns = [
     path("v1/", include(router.urls)),
